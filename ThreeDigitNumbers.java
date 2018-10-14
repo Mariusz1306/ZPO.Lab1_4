@@ -8,7 +8,6 @@ public class ThreeDigitNumbers {
     public ThreeDigitNumbers(String number) {
         HashMap<String, String> hmap = new HashMap<String, String>(11);
 
-        hmap.put("-", "minus");
         hmap.put("0", "zero");
         hmap.put("1", "jeden");
         hmap.put("2", "dwa");
@@ -48,22 +47,15 @@ public class ThreeDigitNumbers {
     }
 
     public boolean isCorrectlyFormatted(){
-        if (this.number.startsWith("-")){
-            if (this.number.length() != 4)
-                return false;
-            try{
-                Integer.parseInt(this.number);
-            } catch (NumberFormatException e){
-                return false;
-            }
-        } else {
-            if (this.number.length() != 3)
-                return false;
-            try{
-                Integer.parseInt(this.number);
-            } catch (NumberFormatException e){
-                return false;
-            }
+        if (this.number.length() != 3){
+            return false;
+        }
+        if (this.number.startsWith("0"))
+            return false;
+        try{
+            Integer.parseInt(this.number);
+        } catch (NumberFormatException e){
+            return false;
         }
         return true;
     }
