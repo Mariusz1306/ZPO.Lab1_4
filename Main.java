@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Main {
     public static ThreeDigitNumbers PobierzNumber(){
-        String number = JOptionPane.showInputDialog("Podaj trzy cyfrową liczbe (opcjonalnie z minusem)");
+        String number = JOptionPane.showInputDialog("Podaj trzy cyfrową liczbe, która na zaczyna się zerem");
         ThreeDigitNumbers tdn = new ThreeDigitNumbers(number);
 
         return tdn;
